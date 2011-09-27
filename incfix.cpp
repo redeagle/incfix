@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
  if(argc != 2)
  {
-  fprintf(stderr, "%s filename\n",argv[0]);
+  fprintf(stderr, "%s filename\n", argv[0]);
   return 1;
  }
  char *src = argv[1];
@@ -33,22 +33,22 @@ int main(int argc, char *argv[])
  
  ///Dateien öffnen
  FILE *fsrc;
- fsrc = fopen(src,"r");
+ fsrc = fopen(src, "r");
  if(fsrc == NULL)
  {
   delete[] dst;
-  fprintf(stderr, "open %s failed\n",src);
+  fprintf(stderr, "open %s failed\n", src);
   return 1; 
  }
  
  FILE *fdst;
- fdst = fopen(dst,"w");
+ fdst = fopen(dst, "w");
  if(fdst == NULL)
  {
   fclose(fsrc);
   delete[] dst;
-  fprintf(stderr, "open %s failed\n",dst);
-  return 1; 
+  fprintf(stderr, "open %s failed\n", dst);
+  return 1;
  }
  
  ///verarbeiten
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
   if(retval == 0) break; //kommt nix mehr
   else if(retval < 0) // error
   {
-   fprintf(stderr, "reading %s failed\n",src);
+   fprintf(stderr, "reading %s failed\n", src);
    break;
   }
   else linelen = retval;
@@ -69,14 +69,14 @@ int main(int argc, char *argv[])
   retval = fixinclude(buffer);
   if(retval < 0)
   {
-   fprintf(stderr, "fixing \"%s\" failed\n",buffer);
+   fprintf(stderr, "fixing \"%s\" failed\n", buffer);
    break;
   }
   
   retval = writeline(fdst, buffer, linelen);
   if(retval < 0)
   {
-   fprintf(stderr, "writing %s failed\n",dst);
+   fprintf(stderr, "writing %s failed\n", dst);
    break;
   }
  }
