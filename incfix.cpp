@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <cstring>
 
-// yay - in unter einer stunde, und weniger als 200 zeichen
+// yay - in unter einer stunde, und weniger als 200 Zeilen
 // scheiß auf perl
 
 #define BUFFERSIZE 4096
